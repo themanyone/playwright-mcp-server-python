@@ -1,0 +1,34 @@
+Playwright MCP Server
+=====================
+
+This project is a ground-up rewrite and redesign of the original
+`playwright-mcp` package (https://pypi.org/project/playwright-mcp/).
+
+Original Package
+----------------
+The original `playwright-mcp` package (version 0.1.0) provided a basic
+Model Context Protocol server for Playwright browser automation.
+It served as the inspiration and conceptual starting point for this project.
+
+This Rewrite
+------------
+This project (`playwright-mcp-server`) is a complete redesign with:
+
+- Modular architecture (config, browser, tools, executor, handlers, server)
+- Full type annotations and mypy compliance
+- Comprehensive test suite (unit + integration)
+- Modern Python packaging (pyproject.toml)
+- CLI with argparse
+- Structured logging
+- Proper resource management with context managers
+- Extended tool set (16 tools vs ~9)
+
+Third-Party Dependencies
+------------------------
+This project builds upon the following excellent open-source projects:
+
+- **MCP (Model Context Protocol)** - https://github.com/modelcontextprotocol/python-sdk
+- **Playwright** - https://github.com/microsoft/playwright
+- **Pydantic** - https://github.com/pydantic/pydantic
+
+All third-party dependencies are used under their respective licenses.
