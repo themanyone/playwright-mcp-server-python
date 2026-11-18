@@ -1,34 +1,37 @@
 Playwright MCP Server
 =====================
 
-This project is a ground-up rewrite and redesign of the original
-`playwright-mcp` package (https://pypi.org/project/playwright-mcp/).
-
-Original Package
-----------------
-The original `playwright-mcp` package (version 0.1.0) provided a basic
-Model Context Protocol server for Playwright browser automation.
-It served as the inspiration and conceptual starting point for this project.
-
-This Rewrite
-------------
-This project (`playwright-mcp-server`) is a complete redesign with:
-
-- Modular architecture (config, browser, tools, executor, handlers, server)
-- Full type annotations and mypy compliance
-- Comprehensive test suite (unit + integration)
-- Modern Python packaging (pyproject.toml)
-- CLI with argparse
-- Structured logging
-- Proper resource management with context managers
-- Extended tool set (16 tools vs ~9)
+This project is an independent Python implementation of a Model Context Protocol
+server for Playwright browser automation.
 
 Third-Party Dependencies
 ------------------------
+
 This project builds upon the following excellent open-source projects:
 
-- **MCP (Model Context Protocol)** - https://github.com/modelcontextprotocol/python-sdk
-- **Playwright** - https://github.com/microsoft/playwright
-- **Pydantic** - https://github.com/pydantic/pydantic
+- **MCP (Model Context Protocol Python SDK)**
+  https://github.com/modelcontextprotocol/python-sdk
+  Licensed under the MIT License
 
-All third-party dependencies are used under their respective licenses.
+- **Playwright** (Python library)
+  https://github.com/microsoft/playwright
+  Copyright (c) Microsoft Corporation
+  Licensed under the Apache License, Version 2.0
+  https://www.apache.org/licenses/LICENSE-2.0
+
+- **Pydantic**
+  https://github.com/pydantic/pydantic
+  Licensed under the MIT License
+
+Trademarks
+----------
+
+Playwright® is a trademark of Microsoft Corporation. This project is an
+independent implementation and is not affiliated with, endorsed by, or
+sponsored by Microsoft Corporation.
+
+License
+-------
+
+This project is licensed under the MIT License. See LICENSE for details.
+Third-party dependencies retain their original licenses.

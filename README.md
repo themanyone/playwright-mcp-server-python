@@ -1,19 +1,28 @@
-# Playwright MCP Server
+# Playwright MCP Server Python
 
-A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. This server exposes a set of tools for navigating, interacting with, and extracting data from web pages.
+![logo 512px](assets/logo.png)
+
+A **Python** Model Context Protocol (MCP) server that provides browser automation capabilities using [Playwright](https://playwright.dev). This server exposes a set of tools for navigating, interacting with, and extracting data from web pages.
+
+> **Note:** This is an independent, community-maintained Python implementation. It is **not** affiliated with, endorsed by, or derived from [Microsoft's official Playwright MCP server](https://github.com/microsoft/playwright-mcp) (which is a Node.js/TypeScript project using accessibility snapshots). This project uses Playwright's standard Python API directly.
 
 ## Features
 
 - **Navigation**: Navigate to URLs, go back/forward, reload pages
 - **Interaction**: Click elements, type text, wait for selectors
 - **Extraction**: Get text content, page HTML, page title, URL
-- **Screenshots**: Take full-page or element screenshots
+- **Screenshots**: Take full-page or element screenshots (base64 PNG via MCP resources)
 - **Multi-page**: Create and switch between multiple browser pages
 - **JavaScript Evaluation**: Execute arbitrary JS in page context
 
 ## Installation
 
+Obtain development version from https://github.com/themanyone/playwright-mcp-server-python.git
+
 ```bash
+git clone https://github.com/themanyone/playwright-mcp-server-python.git
+cd playwright-mcp-server-python
+
 # From source
 pip install -e .
 
@@ -133,6 +142,29 @@ playwright_mcp/
 └── __main__.py     # Entry point
 ```
 
+## Relationship to Other Projects
+
+| Project | Language | Approach | MCP Transport |
+|---------|----------|----------|---------------|
+| **This project** | Python | Direct Playwright API | stdio |
+| [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | Node.js/TypeScript | Accessibility snapshots | stdio / SSE |
+| [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli) | Node.js | CLI + Skills | N/A (CLI) |
+
 ## License
 
-MIT
+Playwright® is a trademark of Microsoft Corporation. This project is an independent implementation using the Playwright Python library under its [Apache 2.0 license](https://github.com/microsoft/playwright/blob/main/LICENSE).
+
+This project includes the Playwright library (also Apache 2.0 licensed by Microsoft Corporation). See [NOTICE](NOTICE) for attribution details.
+
+## Blame
+
+Mostly vibe-coded "from scratch" with [crush agent](https://github.com/charmbracelet/crush) using [NVIDIA: Nemotron 3 Ultra](https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/). And without consulting the original Node.js/TypeScript that had no [Fedora](https://fedoraproject.org/) package at the time, and could not be fixed to work with crush. Some bits contributed by themanyone. Examine source code before running. Use at your own risk.
+
+- [Fork this project on GitHub](https://github.com/themanyone/playwright-mcp-server-python)
+- YouTube https://www.youtube.com/themanyone
+- Mastodon https://mastodon.social/@themanyone
+- Linkedin https://www.linkedin.com/in/henry-kroll-iii-93860426/
+- Buy me a coffee https://buymeacoffee.com/isreality
+- [TheNerdShow.com](http://thenerdshow.com/)
+
+## Thanks for trying out Playwright MCP Server Python!
