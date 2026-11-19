@@ -41,7 +41,6 @@ class PlaywrightMCPServer:
     async def lifespan(self) -> AsyncIterator[None]:
         """Manage server lifecycle."""
         logger.info("Starting Playwright MCP server...")
-        await self._browser.initialize()
         try:
             yield
         finally:

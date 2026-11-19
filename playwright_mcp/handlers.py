@@ -26,6 +26,11 @@ class RequestHandlers:
         self._browser = browser_manager
         self._executor = ToolExecutor(browser_manager, default_timeout)
 
+    async def _ensure_initialized(self) -> None:
+        """Lazily initialize the browser on first tool call."""
+        if not self._browser.is_initialized:
+            await self._browser.initialize()
+
     async def handle_list_tools(
         self, ctx: ServerRequestContext, params: types.PaginatedRequestParams
     ) -> types.ListToolsResult:
@@ -36,14 +41,14 @@ class RequestHandlers:
         self, ctx: ServerRequestContext, params: types.CallToolRequestParams
     ) -> types.CallToolResult:
         """Execute a tool."""
-        await self._browser.initialize()
+        await self._ensure_initialized()
         return await self._executor.execute(params.name, params.arguments or {})
 
     async def handle_list_resources(
         self, ctx: ServerRequestContext, params: types.PaginatedRequestParams
     ) -> types.ListResourcesResult:
         """List available resources (screenshots)."""
-        await self._browser.initialize()
+        await self._ensure_initialized()
         resources = []
         for page_id, page in self._browser.pages.items():
             resources.append(
@@ -60,7 +65,7 @@ class RequestHandlers:
         self, ctx: ServerRequestContext, params: types.ReadResourceRequestParams
     ) -> types.ReadResourceResult:
         """Read a screenshot resource."""
-        await self._browser.initialize()
+        await self._ensure_initialized()
         uri = params.uri
         if not uri.startswith("screenshot://"):
             raise ValueError(f"Unsupported URI scheme: {uri}")
