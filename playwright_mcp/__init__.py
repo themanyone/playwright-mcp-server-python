@@ -9,7 +9,7 @@ from .handlers import RequestHandlers
 from .server import PlaywrightMCPServer, create_server, main
 from .tools import TOOLS, get_tools
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __all__ = [
     "DEFAULT_CONFIG",
     "TOOLS",

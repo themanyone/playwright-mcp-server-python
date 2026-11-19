@@ -17,7 +17,13 @@ A **Python** Model Context Protocol (MCP) server that provides browser automatio
 
 ## Installation
 
-Obtain development version from https://github.com/themanyone/playwright-mcp-server-python.git
+Install via pip
+
+```bash
+pip install playwright-mcp-server-hellork
+```
+
+Or obtain development version from https://github.com/themanyone/playwright-mcp-server-python.git
 
 ```bash
 git clone https://github.com/themanyone/playwright-mcp-server-python.git
